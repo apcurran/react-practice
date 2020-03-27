@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Ninjas from "./Ninjas";
+import AddNinja from './AddNinja'
 
 // Container Component
 class App extends Component {
@@ -11,6 +12,15 @@ class App extends Component {
     ]
   };
 
+  addNinja = (ninja) => {
+    ninja.id = Date.now().toString();
+    const ninjas = [...this.state.ninjas, ninja];
+
+    this.setState({
+      ninjas: ninjas
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -18,6 +28,7 @@ class App extends Component {
           <h1>My First React App</h1>
           <p>Welcome!</p>
           <Ninjas ninjas={ this.state.ninjas } />
+          <AddNinja addNinja={ this.addNinja } />
         </header>
       </div>
     );
