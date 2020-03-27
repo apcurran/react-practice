@@ -1,7 +1,7 @@
 import React from "react";
 
 // UI Component
-function Ninjas({ ninjas }) {
+function Ninjas({ ninjas, deleteNinja }) {
     const ninjaList = ninjas.map(ninja => {
         if (ninja.age > 20) {
             return (
@@ -9,6 +9,7 @@ function Ninjas({ ninjas }) {
                     <p>Name: { ninja.name }</p>
                     <p>Age: { ninja.age }</p>
                     <p>Belt: { ninja.belt }</p>
+                    <button onClick={ () => deleteNinja(ninja.id) }>Delete Ninja</button>
                 </div>
             );
         } else {
