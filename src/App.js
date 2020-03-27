@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Ninjas from "./Ninjas";
 
+// Container Component
 class App extends Component {
   state = {
     ninjas: [
